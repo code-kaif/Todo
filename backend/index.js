@@ -8,6 +8,7 @@ import taskRouter from "./routes/task.js";
 
 const app = express();
 dotenv.config();
+const port = process.env.PORT || 4000;
 
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -32,4 +33,4 @@ app.get("/", (req, res) => {
   res.send("Api is working");
 });
 
-app.listen(process.env.PORT, () => console.log("Server is Running"));
+app.listen(port, () => console.log("Server is Running"));
