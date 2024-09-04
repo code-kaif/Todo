@@ -26,6 +26,7 @@ function Login() {
       .then((res) => {
         localStorage.setItem("User", JSON.stringify(res.data.user));
         toast.success(res.data.message);
+        <Navigate to={"/"} />;
         setIsAuth(true);
 
         setTimeout(() => {

@@ -27,8 +27,11 @@ function Signup() {
       .then((res) => {
         localStorage.setItem("User", JSON.stringify(res.data.user));
         toast.success(res.data.message);
+        <Navigate to={"/"} />;
         setIsAuth(true);
-        console.log(res.data.user);
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       })
       .catch((err) => {
         toast.error("User Already Exist");
